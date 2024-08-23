@@ -1,0 +1,240 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0; padding: 0; scroll-behavior: smooth;}
+a{text-decoration: none; color: inherit;}
+li{list-style: none;}
+
+#header {position: fixed; top: 40px; right: 20px; z-index: 100; width: 300px; background: rgba(0,0,0,0.2);}
+
+#header ul {}
+#header ul li {transition: 0.3s;}
+#header ul li a {display: block; text-align: center; padding: 20px 0; color: gray; transition: 0.5s;}
+#header ul li:nth-of-type(1) a {color: black; transform: translateY(1);}
+#header ul li a::after {content: ""; display: block; background: white; height: 2px; margin: 10px 60px; transform: scaleX(0); transform-origin: left center; transition: 0.3s;}
+#header ul li:hover a {color: black;}
+#header ul li a:hover::after {transform: scaleX(1);}
+#header ul li a.line::after {transform: scaleX(1);}
+
+@media all and (max-width:1000px) {
+	#header {display: none;}
+}
+
+/*메인*/
+#home {position: relative; width: 100%; height: 100vh; }
+#home img {width: 100%; height: 100vh;}
+#home .textbox1 {position: absolute; top: 10px; left: 30px; animation: title 1s linear;}
+#home .textbox1 h1 {font-size: 7em; color: rgba(31,5,46,1.00); transition: 0.5s;}
+#home .textbox1 h3 {font-size: 3em; padding: 30px 5px 0; color: rgba(62,13,69,1.00); transition: 0.5s;}
+#home .textbox1 h5 {font-size: 1.5em; padding: 42px 10px; color:rgba(67,40,70,1.00); transition: 0.5s;}
+@keyframes title {
+	0%{opacity: 0; transform: translateY(40px);}
+	30%{opacity: 0; transform: translateY(40px);}
+	100% {opacity: 1; transform: translateY(0);}
+}
+@media all and (max-width:675px) {
+	#home .textbox1 h1 {font-size: 5em;}
+}
+@media all and (max-width:540px) {
+	#home .textbox1 h1 {font-size: 3em;}
+	#home .textbox1 h3 {font-size: 1.5em;}
+	#home .textbox1 h5 {font-size: 1em;}
+}
+
+
+#home .textbox2 {position: absolute; bottom: 100px; left: 40px; color: rgba(31,5,46,1.00); transition: 0.5s;}
+#home .textbox2 h4 {padding: 20px 0; animation: info 1s linear;}
+#home .textbox2 ul {} 
+#home .textbox2 ul li {padding: 20px 0;animation: info 2s linear;}
+#home .textbox2 ul li a {animation: info 2s linear;  cursor: pointer;}
+#home .textbox2 ul li:hover a {border-radius: 50%; text-shadow:5px 5px 5px violet;}
+@keyframes info {
+	0% {opacity: 0;transform: translateY(40px);}
+	50% {opacity: 0;transform: translateY(40px);}
+	100% {opacity: 1;transform: translateY(0);}
+}
+#home .textbox2 p {opacity: 0; transition: 0.5s; position: absolute; bottom: 50px; left: 150px; font-size: 1.2em; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif"; letter-spacing: 1px;}
+
+@media all and (max-width:540px) {
+	#home .textbox2 {font-size: 0.8em;}
+}
+
+/* 스크롤 다운 */
+#home .scroll_down {}
+#home .scroll_down .bounce {position: relative; bottom: 70px; left: 50%;}
+#home .scroll_down .bounce::before {position: absolute; top: 0; left: 0; content: ""; width: 7px; height: 7px; border-bottom: 3px solid gray; border-left: 3px solid gray; transform: rotate(-45deg);}
+#home .scroll_down .bounce::after {content: ""; position: absolute; bottom: -8px; left: 3px; width: 3px; height: 35px; background: gray; animation: down 2s linear infinite;}
+#home .scroll_down p {position: absolute; bottom: 30px; left: 50%; margin-left: -30px; font-size: 0.8em; }
+
+@keyframes down {
+	0% {transform-origin: top;
+	transform: scaleY(0);}
+	45% {transform-origin: top;
+	transform: scaleY(1);}
+	55% {transform-origin: bottom;
+	transform: scaleY(1);}
+	100% {transform-origin: bottom;
+	transform: scaleY(0);}
+}
+@media all and (max-width:600px) {
+	#home .scroll_down {display: none;}
+}
+/*자기소개*/
+#about {width: 100%; height: 100vh; }
+#about h1 {width: 300px; margin: 0 auto; text-align: center; font-size: 4em; padding: 50px 0; opacity: 0; transition: 1s;}
+#about .me {display: flex; justify-content: center; align-items: center; padding-top: 50px;}
+#about .me .about_pic {position: relative; padding: 20px;}
+#about .me img {background: white; border: 1px solid gray; padding: 10px; border-radius: 20px; opacity: 0; transition: 1s;}
+#about .me .self_intro {padding: 0 50px;}
+#about .me .self_intro p {font-family: "Jua", sans-serif; font-size: 1.5em; padding-bottom: 30px; color:rgba(65,65,65,1.00); letter-spacing: 1px; opacity: 0;}
+#about .me .self_intro p.on {animation: aboutme 2s forwards;}
+@keyframes aboutme {
+	0% {opacity: 0; transform: translateX(-30px);}
+	30% {opacity: 0; transform: translateX(-30px);}
+	100% {opacity: 1; transform: translateX(0);}
+}
+
+@media all and (max-width:1168px){
+	#about {width: 100%; height: 150vh;}
+	#about .me {display: flex; justify-content: center; align-items: center; flex-direction: column;}
+	#about .me .self_intro {padding-top: 50px; line-height: 40px;}
+}
+@media all and (max-width: 695px) {
+	#about .me .self_intro {font-size: 0.9em; padding:40px 0; }
+}
+
+@media all and (max-width:550px){
+	#about .me img {width: 250px;}
+	#about .me .self_intro {font-size: 0.6em;}
+}
+
+
+
+/*포트폴리오 메뉴*/
+#portfolio {width: 100%; min-height: 200vh;}
+#portfolio .sticky {position: sticky; top: 0; width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; box-sizing: border-box;}
+#portfolio .sticky .sticky_title {opacity: 0; font-weight: 700; font-size: 6em; padding-bottom: 200px; text-align: center; transition: 1s;}
+#portfolio .sticky .section {width: 100%; min-height: 100%; position: absolute; background: white;}
+#portfolio .sticky .section .title {display: flex; align-items: center; background: FloralWhite; border-top: 1px solid darkgray; border-bottom: 1px solid darkgray; padding-left: 20px;}
+#portfolio .sticky .section .content {font-family: "Jua", sans-serif; letter-spacing: 2px;}
+
+@media all and (max-width:1380px){
+	#portfolio {min-height: 200vh;}
+	
+}
+@media all and (max-width:900px){
+	#portfolio {}
+	#portfolio .sticky .sticky_title {padding-bottom: 600px;}
+}
+
+
+/* first 박스 (사유원) */
+#portfolio .sticky .section .content .sayuwon_box {display: flex; justify-content: center; align-items: center; min-height: 80vh; text-align: center; }
+#portfolio .sticky .section .content .sayuwon_box .tree {display: flex; justify-content: center; flex-direction: column;}
+#portfolio .sticky .section .content .sayuwon_box .tree a {display: flex; justify-content: center; background: SeaGreen; width: 350px; height: 200px; border-radius: 20px; border: 1px solid gray; transition: 0.5s;}
+#portfolio .sticky .section .content .sayuwon_box .tree a:hover {transform: translateY(-10px);}
+#portfolio .sticky .section .content .sayuwon_box .tree a img {width: 200px; padding: 20px 0;}
+#portfolio .sticky .section .content .sayuwon_box .tree h2 {font-size: 1.8em; padding-top: 20px;}
+
+/* second 박스 (카카오) */
+#portfolio .sticky .section .content .kakao_box {display: flex; justify-content: space-around; align-items: center; min-height: 80vh; text-align: center;}
+#portfolio .sticky .section .content .kakao_box .lion {padding-bottom: 100px;}
+#portfolio .sticky .section .content .kakao_box .lion a {display: flex; justify-content: center; background: CadetBlue; width: 350px; border-radius: 20px; border: 1px solid gray; transition: 0.5s;}
+#portfolio .sticky .section .content .kakao_box .lion a:hover {transform: translateY(-10px);}
+#portfolio .sticky .section .content .kakao_box .lion a img {width: 200px; padding: 20px 0;}
+#portfolio .sticky .section .content .kakao_box .lion h2 {font-size: 1.8em; padding-top: 20px;}
+#portfolio .sticky .section .content .kakao_box .lion p {}
+
+#portfolio .sticky .section .content .kakao_box .chunsik {}
+#portfolio .sticky .section .content .kakao_box .chunsik a {display: flex; justify-content: center; background: LightSteelBlue; width: 350px; border-radius: 20px; border: 1px solid gray; transition: 0.5s;}
+#portfolio .sticky .section .content .kakao_box .chunsik a:hover {transform: translateY(-10px);}
+#portfolio .sticky .section .content .kakao_box .chunsik a img {width: 250px; padding: 20px 0;}
+#portfolio .sticky .section .content .kakao_box .chunsik h2 {font-size: 1.8em; padding-top: 20px;}
+#portfolio .sticky .section .content .kakao_box .chunsik p {}
+
+/* third 박스 (포스코) */
+/* 
+#portfolio .sticky .section .content .posco_box {display: flex; justify-content: space-around; align-items: center; min-height: 80vh; text-align: center; }
+#portfolio .sticky .section .content .posco_box .main {}
+#portfolio .sticky .section .content .posco_box .main a {display: flex; justify-content: center; background: rgba(2, 85, 135, 1); width: 350px; border-radius: 20px; border: 1px solid gray; transition: 0.5s;}
+#portfolio .sticky .section .content .posco_box .main a:hover {transform: translateY(-10px);}
+#portfolio .sticky .section .content .posco_box .main a img {width: 200px; padding: 20px 0;}
+#portfolio .sticky .section .content .posco_box .main h2 {font-size: 1.8em; padding-top: 20px;}
+#portfolio .sticky .section .content .posco_box .main h2 p {}
+
+#portfolio .sticky .section .content .posco_box .sub {padding-bottom: 100px;}
+#portfolio .sticky .section .content .posco_box .sub a {display: flex; justify-content: center; background: #238dc2; width: 350px; border-radius: 20px; border: 1px solid gray; transition: 0.5s;}
+#portfolio .sticky .section .content .posco_box .sub a:hover {transform: translateY(-10px);}
+#portfolio .sticky .section .content .posco_box .sub a img {width: 200px; padding: 20px 0;}
+#portfolio .sticky .section .content .posco_box .sub h2 {font-size: 1.8em; padding-top: 20px;}
+#portfolio .sticky .section .content .posco_box .sub p {} 
+*/
+
+@media all and (max-width:900px){
+	#portfolio {min-height: 200vh;}
+	#portfolio .sticky {min-height: 120vh;}
+	#portfolio .sticky .section {min-height: 120vh;}
+	#portfolio .sticky .section .content .sayuwon_box {display: flex; justify-content: center; align-items: center; padding-top: 20%;}
+	#portfolio .sticky .section .content .kakao_box {flex-direction: column; padding-top: 10%;}
+	/* #portfolio .sticky .section .content .posco_box {flex-direction: column; padding-top: 20%;}
+	#portfolio .sticky .section .content .posco_box .main {padding-bottom: 150px;} */
+}
+@media all and (max-width:400px){
+	#portfolio .sticky .section .content .sayuwon_box {font-size: 0.7em; font-weight: 100;}
+	#portfolio .sticky .section .content .kakao_box {font-size: 0.7em; font-weight: 100;}
+	/* #portfolio .sticky .section .content .posco_box {font-size: 0.7em; font-weight: 100;} */
+	#portfolio .sticky .section .content .sayuwon_box .tree a {width: 220px;}
+	#portfolio .sticky .section .content .sayuwon_box .tree a img {width: 150px; height: 120px;}
+	#portfolio .sticky .section .content .kakao_box .lion a {width: 220px;}
+	#portfolio .sticky .section .content .kakao_box .lion a img {width: 100px;}
+	#portfolio .sticky .section .content .kakao_box .chunsik a {width: 220px;}
+	#portfolio .sticky .section .content .kakao_box .chunsik a img {width: 100px;}
+	/* #portfolio .sticky .section .content .posco_box .main a {width: 220px;}
+	#portfolio .sticky .section .content .posco_box .main a img {width: 100px;}
+	#portfolio .sticky .section .content .posco_box .sub a {width: 220px;}
+	#portfolio .sticky .section .content .posco_box .sub a img {width: 100px;} */
+}
+#footer {position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%; height: 400px;}
+#footer p {font-size: 5em; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif"; letter-spacing: 5px;}
+#footer .copyright_made {position: absolute; bottom: 30px;}
+#footer .copyright_made span {color: gray;}
+#footer .copyright_made .name {font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; font-weight: bolder; font-size: 1.1em; color: LightSlateGrey;}
+
+@media all and (max-width:500px){
+	#footer p {font-size: 3.5em;}
+	#footer .copyright_made {font-size: 0.9em;}
+}
+
+@media all and (max-width:400px){
+	#footer p {font-size: 3em;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jsnow portfolio </title>
+	
+	<link href="css/style.css" rel="stylesheet">
+	<script src="script/jquery-3.3.1.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<meta name="Description" content="">
+	<meta name="Keywords" content="전예주의 포트폴리오">
+	<link rel="shortcut icon" href="img/MOON.png">
+	
+</head>
+
+<body>
+	
+	<header id="header">
+		<ul>
+			<li><a href="#home">HOME</a></li>
+			<li><a href="#about">ABOUT</a></li>
+			<li><a href="#portfolio">PORTFOLIO</a></li>
+		</ul>
+	</header>
+	
+	<div id="home">
+		<img src="img/main_bg.png" alt="배경">
+		<div class="textbox1">
+			<h1>PORTFOLIO.</h1>
+			<h3>WEB PUBLISHER</h3>
+			<h5>JEON YEJU</h5>
+		</div>
+		<div class="textbox2">
+			<h4>전예주</h4>
+			<ul>
+				<li>1996.12.25</li>
+				<li>+82 10-6571-8507</li>
+				<li>
+					<a href="mailto:snow8507@naver.com">
+						snow8507@naver.com
+					</a>
+				</li>
+			</ul>
+			<p>Contact!</p>
+		</div>
+		<div class="scroll_down">
+			<i class="bounce">
+			</i>
+			<p>Scroll Down</p>
+		</div>
+	</div>
+	
+	<div id="about">
+		<h1>ABOUT</h1>
+		<div class="me">
+			<div class="about_pic">
+				<img src="img/mine.jpg" alt="me">
+			</div>
+			<div class="self_intro">
+				<p>안녕하세요 웹 퍼블리셔 전예주입니다!</p> 
+				<p>
+					꾸준히 성장하고 자신을 발전시킬 수 있도록 항상 노력하고<br>
+					최신 기술을 파헤쳐보는 웹 퍼블리셔입니다.<br>
+					HTML, CSS, Jquery, Javascript 등을 다룰 수 있습니다.
+				</p>
+				<p>
+					어느 기기에서나 잘 보이는 반응형 웹페이지를 구현할 수 있고<br>
+					웹표준과 웹 접근성을 고려한 웹페이지를 만들 수 있습니다.
+				</p>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="portfolio">
+
+		<div class="sticky">
+			<p class="sticky_title">My Work</p>
+			<div class="section">
+				<div class="title">first</div>
+				<div class="content">
+					<div class="sayuwon_box">
+						<div class="tree">
+							<a href="http://snow8507.dothome.co.kr/sayuwon/" target="_blank">
+								<img src="img/tree.png" alt="tree">
+							</a>
+							<h2>사유원 홈페이지</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="title">second</div>	
+				<div class="content">
+					<div class="kakao_box">
+						<div class="lion">
+							<a href="http://snow8507.dothome.co.kr/kakao/" target="_blank">
+								<img src="img/kakao_lion.png" alt="lion">
+							</a>
+							<h2>카카오뱅크 홈페이지</h2>
+							<p></p>
+						</div>
+						<div class="chunsik">
+							<a href="http://snow8507.dothome.co.kr/kakao/subpg_bisang.html" target="_blank">
+								<img src="img/chunsik.png" alt="chunsik">
+							</a>
+							<h2>카카오뱅크 서브페이지</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="section">
+				<div class="title">third</div>
+				<div class="content">
+					<div class="posco_box">
+						<div class="main">
+							<a href="http://snow8507.dothome.co.kr/posco/" target="_blank">
+								<img src="img/kakao_lion.png" alt="lion">
+							</a>
+							<h2>포스코A＆C 메인 홈페이지</h2>
+							<p></p>
+						</div>
+						<div class="sub">
+							<a href="http://snow8507.dothome.co.kr/posco/research.html" target="_blank">
+								<img src="img/chunsik.png" alt="chunsik">
+							</a>
+							<h2>포스코A＆C 서브페이지</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+
+	</div>
+	
+	<div id="footer">
+		
+		<p>Thank You !</p>
+		
+		<div class="copyright_made">
+			<span>Made by</span> 
+			<span class="name">Jsnow</span>
+			<span class="moon">&#127769;</span>
+		</div>
+		
+	</div>
+	
+	<script>
+		//이메일 contact!
+		$('#home .textbox2 ul li a').mouseover(function(){
+			
+			$('#home .textbox2 p').css({'opacity':'1'});
+		});
+		$('#home .textbox2 ul li a').mouseout(function(){
+			
+			$('#home .textbox2 p').css({'opacity':'0'});
+		});
+		
+		// 스크롤 이벤트
+		$(window).scroll(function(){
+			var scr = $(window).scrollTop();
+			
+			if (scr >= 0.1 && scr <= 830){
+				$('#header ul li:nth-of-type(1) a').css({'color':'black'});
+				// header li 첫번째 
+				$('#header ul li:nth-of-type(1) a').addClass('line');
+			} else {
+				$('#header ul li:nth-of-type(1) a').css({'color':'gray'});
+				// header li 첫번째
+				$('#header ul li:nth-of-type(1) a').removeClass('line');
+			}
+			if (scr >= 300){
+				$('#about h1').css({'opacity':'1','transform':'translateY(0)'});
+			} else {
+				$('#about h1').css({'opacity':'0','transform':'translateY(40px)'});
+			}
+			if (scr >= 600 && scr <= 1500){
+				$('#about .me img').css({'opacity':'1','transform':'translateY(0)'});
+				$('#about .me .self_intro p').addClass('on');
+			} else {
+				$('#about .me img').css({'opacity':'0','transform':'translateY(40px)'});
+				$('#about .me .self_intro p').removeClass('on');
+			}
+			if (scr >= 839 && scr <= 1670){
+				$('#header ul li:nth-of-type(2) a').css({'color':'black'});
+				// header li 두번째
+				$('#header ul li:nth-of-type(2) a').addClass('line');
+			} else {
+				$('#header ul li:nth-of-type(2) a').css({'color':'gray'});
+				// header li 두번째
+				$('#header ul li:nth-of-type(2) a').removeClass('line');
+			}
+			/*if (scr >= 1300) {
+				$('#portfolio .sticky .sticky_title').
+			}*/
+			
+			if (scr >= 1678){
+				$('#header ul li:nth-of-type(3) a').css({'color':'black'});
+				// header li 세번째
+				$('#header ul li:nth-of-type(3) a').addClass('line');
+			} else {
+				$('#header ul li:nth-of-type(3) a').css({'color':'gray'});
+				// header li 세번째
+				$('#header ul li:nth-of-type(3) a').removeClass('line');
+			}
+			if (scr >= 1800){
+				$('#portfolio .sticky .sticky_title').css({'opacity':'1','transform':'translateY(0)'});
+			} else {
+				$('#portfolio .sticky .sticky_title').css({'opacity':'0','transform':'translateY(40px)'});
+			}
+			console.log($(window).scrollTop());
+		});
+		
+		class FolderScroll {
+			
+			constructor (wrapper, sticky) {
+				this.wrapper = wrapper
+				this.sticky = sticky
+				this.children = this.sticky.querySelectorAll('.section')
+				this.length = this.children.length
+				this.headerVh = 6
+				this.contentVh = 100 - this.headerVh * this.length + 0.5
+				this.start = 0
+				this.end = 0
+			}
+			
+			init () {
+				this.start = this.wrapper.offsetTop
+				this.end = this.wrapper.offsetTop + this.wrapper.offsetHeight - innerHeight
+				
+				this.children.forEach((child, i) => {
+					child.style.bottom = -100 + this.headerVh * (this.length - i) + `vh`
+					child.querySelector('.title').style.height = this.headerVh + `vh`
+					child.querySelector('.content').style.height = this.contentVh + `vh`
+				})
+			}
+			
+			animate () {
+				this.children.forEach((child, i) => {
+					const unit = (this.end - this.start) / this.length
+					const s = this.start + unit * i + 100
+					const e = this.start + unit * (i + 1)
+					
+					if (scrollY <= s) {
+						child.style.transform = `translate3d(0, 0, 0)`
+					} else if (scrollY >= e) {
+						child.style.transform = `translate3d(0, ${-this.contentVh}%, 0)`
+					} else {
+						child.style.transform = `translate3d(0, ${
+							(scrollY - s) / (unit - 100) * (-this.contentVh)
+						}%, 0)`
+					}
+				})
+				
+			}
+		}
+		const mainContent1 = document.querySelector('#portfolio')
+		const sticky = document.querySelector('.sticky')
+		const folderScroll = new FolderScroll (mainContent1, sticky)
+		folderScroll.init()
+		
+		window.addEventListener('scroll', () => {
+			folderScroll.animate()
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
